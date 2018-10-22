@@ -1,4 +1,3 @@
-package fizzbuzz;
 
 import java.util.Scanner;
 
@@ -6,11 +5,16 @@ public class FizzBuzz {
 
     public static void main(String[] args) {
 
+    	int number = 0;
         Scanner inp = new Scanner(System.in);
 
         System.out.println("How many numbers do you want display? (insert) ");
 
-        int number = inp.nextInt();
+        if (inp.hasNextInt()) {
+        	number = inp.nextInt();
+        } else {
+        	System.out.println("Parameter is not accepted");
+        }
 
         for (int i = 1; i <= number; i++) {
 
@@ -26,5 +30,6 @@ public class FizzBuzz {
             else
                 System.out.println(i);
         }
+        inp.close();
     }
 }
